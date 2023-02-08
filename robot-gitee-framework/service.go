@@ -5,11 +5,10 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/opensourceways/server-common-lib/config"
+	"github.com/opensourceways/server-common-lib/interrupts"
+	"github.com/opensourceways/server-common-lib/options"
 	"github.com/sirupsen/logrus"
-
-	"github.com/opensourceways/community-robot-lib/config"
-	"github.com/opensourceways/community-robot-lib/interrupts"
-	"github.com/opensourceways/community-robot-lib/options"
 )
 
 type HandlerRegister interface {

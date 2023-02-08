@@ -3,10 +3,11 @@ package main
 import (
 	"errors"
 
-	"github.com/opensourceways/community-robot-lib/config"
-	"github.com/opensourceways/community-robot-lib/robot-gitee-framework"
 	sdk "github.com/opensourceways/go-gitee/gitee"
+	"github.com/opensourceways/server-common-lib/config"
 	"github.com/sirupsen/logrus"
+
+	"github.com/opensourceways/robot-gitee-lib/robot-gitee-framework"
 )
 
 // TODO: set botName

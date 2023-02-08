@@ -6,7 +6,7 @@ import (
 	sdk "github.com/opensourceways/go-gitee/gitee"
 	"github.com/sirupsen/logrus"
 
-	"github.com/opensourceways/community-robot-lib/config"
+	"github.com/opensourceways/server-common-lib/config"
 )
 
 const (
