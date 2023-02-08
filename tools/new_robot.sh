@@ -83,10 +83,10 @@ check_robot_name() {
 }
 
 build(){
-    local platform=$1
-    local robot_name=$2
-    local repo_dir=$3
-    local remote_repo=$4
+    local platform="gitee"
+    local robot_name=$1
+    local repo_dir=$2
+    local remote_repo=$3
 
 
     if [ "$platform" != "gitee" -a "$platform" != "github" -a "$platform" != "gitlab" ]; then
@@ -106,11 +106,11 @@ build(){
     mkdir -p $repo_dir
     cd $repo_dir
 
-    git clone https://github.com/opensourceways/community-robot-lib.git
+    git clone https://github.com/opensourceways/robot-gitee-lib.git
 
-    cp -r community-robot-lib/robot-${platform}-template/. .
+    cp -r robot-gitee-lib/robot-${platform}-template/. .
 
-    rm -fr community-robot-lib 
+    rm -fr robot-gitee-lib
 
     cp -r basic/. .
 
@@ -135,9 +135,9 @@ build(){
 cmd_help(){
 cat << EOF
 
-Usage: $me platform[gitee/github/gitlab] robot-name dir-of-robot remote-repository-of-robot.
+Usage: $me  robot-name dir-of-robot remote-repository-of-robot.
 
-For Example: $me gitee test . github.com/opensourceways
+For Example: $me test . github.com/opensourceways
 
 The command above will
 generate robot codes for gitee platform at current dir with
@@ -147,9 +147,9 @@ import path of 'github.com/opensourceways/robot-gitee-test'.
 EOF
 }
 
-if [ $pn -lt 4 ]; then
+if [ $pn -lt 3 ]; then
     cmd_help
     exit 1
 fi
 
-build $1 $2 $3 $4
+build $1 $2 $3
